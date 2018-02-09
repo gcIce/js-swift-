@@ -15,6 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        UINavigationBar.appearance().barTintColor = navBackground
+        UINavigationBar.appearance().titleTextAttributes =
+            [NSAttributedStringKey.foregroundColor: navTitleColor,NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20*scanleText)]
+        UINavigationBar.appearance().tintColor = navItemColor
+        self.window = UIWindow.init(frame: UIScreen.main.bounds)
+        let tabVC = ViewController()
+        let nav = UINavigationController(rootViewController: tabVC)
+        self.window?.rootViewController = nav
+        self.window?.makeKeyAndVisible()
         // Override point for customization after application launch.
         return true
     }

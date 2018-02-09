@@ -1,0 +1,140 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="http://zeptojs.com/zepto.min.js"></script>
+    <script type="text/javascript" src="jssdk.js"></script>
+</head>
+<body>
+<div class="lbox_close wxapi_form">
+    <div id="scan">
+        <button id="btn_scan" class="btn btn_primary">QR scan</button>
+    </div>
+    <div id="result"></div>
+    <span class="desc"></span>
+    <div id="photo">
+        <button id="btn_photo" class="btn btn_primary">Get photo</button>
+        <button id="btn_upload" class="btn btn_primary">Upload photo</button>
+    </div>
+    <div id="localId"></div>
+    <div><img id="imgId"></div>
+    <div id="menu">
+        <button id="btn_show_menu" class="btn btn_primary">Show option menu</button>
+        <button id="btn_hide_menu" class="btn btn_primary">Hide option menu</button>
+    </div>
+    <div id="window">
+        <button id="btn_set_title" class="btn btn_primary">Set title</button>
+        <button id="btn_new_window" class="btn btn_primary">Open new window</button>
+        <button id="btn_close_window" class="btn btn_primary">Close window</button>
+<!--        <button id="btn_enable_refresh" class="btn btn_primary">Enable refresh</button>-->
+<!--        <button id="btn_disable_refresh" class="btn btn_primary">Disable refresh</button>-->
+    </div>
+    <script type="text/javascript">
+
+    Zepto(function($){
+
+      $('#btn_scan').on('click', function(e) {
+        yw.scanQRCode({
+            success: function(res) {
+                $('#result').html(res.resultStr); // 扫描结果
+            }
+        })
+      });
+
+      $('#btn_photo').on('click', function(e) {
+        yw.chooseImage({
+            sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+            success: function(res) {
+                $('#localId').html(res.localId); // 图片id
+                $('#imgId').attr('src', res.data); // 图片BASE64编码
+            }
+        });
+      });
+
+      $('#btn_upload').on('click', function(e) {
+        yw.uploadImage({
+            localId: $('#localId').html(),
+            url: 'http://xxxxxx',
+            success: function(res) {
+                alert('true');
+            },
+            fail: function(res) {
+                alert('false');
+            }
+        });
+      });
+
+      $('#btn_show_menu').on('click', function(e) {
+        var array = new Array();
+
+        var menu1 = new Object();
+        menu1.name = '分享';
+        menu1.action = 'echoHandler';
+        menu1.callback = function() {
+            alert('Aha');
+        };
+        array.push(menu1);
+
+        var menu2 = new Object();
+        menu2.name = '扫一扫';
+        menu2.action = 'qrHandler';
+        menu2.callback = function() {
+            $('#btn_scan').click();
+        };
+        array.push(menu2);
+
+        yw.showOptionMenu({
+            menuItems: array, // 菜单项数组
+            success: function() {
+                console.log('Menu added');
+            },
+            fail: function() {
+                alert('false');;
+            }
+        });
+      });
+
+      $('#btn_hide_menu').on('click', function(e) {
+           yw.hideOptionMenu();
+      });
+
+      $('#btn_new_window').on('click', function(e) {
+        var extras = new Object();
+        extras.url = 'http://xxxx';
+        extras.token = '123456';
+
+        yw.openWindow({
+            name: 'browser', // 启动的原生窗口名称，必填
+            extras: extras, // 附加参数，选填
+            success: function() {
+                console.log('Window opened');
+            },
+            fail: function() {
+                alert('false');;
+            }
+        });
+      });
+
+      $('#btn_close_window').on('click', function(e) {
+        yw.closeWindow();
+      });
+
+      $('#btn_set_title').on('click', function(e) {
+        yw.setTitle('foo');
+      });
+
+      $('#btn_enable_refresh').on('click', function(e) {
+        yw.setRefresh(true);
+      });
+
+      $('#btn_disable_refresh').on('click', function(e) {
+        yw.setRefresh(false);
+      });
+
+      yw.init(function(bridge) {});
+    });
+</script>
+</div>
+</body>
+</html>
