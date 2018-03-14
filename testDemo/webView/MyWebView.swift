@@ -111,6 +111,12 @@ class MyWebView: UIView,WKNavigationDelegate,WKUIDelegate,UIScrollViewDelegate{
             isFail = false
         }
         webView.scrollView.mj_header.endRefreshing()
+        let jsFunctStr = "yw.onBridgeLoaded();"
+        webView.evaluateJavaScript(jsFunctStr) { (value, error) in
+            if (error != nil) {
+                print("写入成功")
+            }
+        }
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {

@@ -35,6 +35,7 @@ class NewWebViewViewController: BaseWebViewController,webViewDelegate,navProtoco
     }
     
     func backItem() {
+           print(getCurrentVC().getCurrentViewController1())
         self.navigationController?.popViewController(animated: true)
     }
     
