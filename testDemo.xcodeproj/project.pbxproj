@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		343DB133202D77CC0072A854 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 343DB11E202D77CC0072A854 /* LICENSE */; };
 		343DB134202D77CC0072A854 /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 343DB120202D77CC0072A854 /* WebViewJavascriptBridgeBase.m */; };
 		343DB135202D77CC0072A854 /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 343DB121202D77CC0072A854 /* WKWebViewJavascriptBridge.m */; };
 		343DB136202D77CC0072A854 /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 343DB122202D77CC0072A854 /* WebViewJavascriptBridge.m */; };
 		343DB137202D77CC0072A854 /* WebViewJavascriptBridge_JS.m in Sources */ = {isa = PBXBuildFile; fileRef = 343DB125202D77CC0072A854 /* WebViewJavascriptBridge_JS.m */; };
-		343DB138202D77CC0072A854 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 343DB128202D77CC0072A854 /* README.md */; };
 		343DB139202D77CC0072A854 /* jssdk.js in Resources */ = {isa = PBXBuildFile; fileRef = 343DB129202D77CC0072A854 /* jssdk.js */; };
 		343DB13A202D77CC0072A854 /* NewWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343DB12A202D77CC0072A854 /* NewWebViewViewController.swift */; };
 		343DB13B202D77CC0072A854 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 343DB12B202D77CC0072A854 /* test.html */; };
@@ -55,7 +53,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		343DB11E202D77CC0072A854 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		343DB120202D77CC0072A854 /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
 		343DB121202D77CC0072A854 /* WKWebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewJavascriptBridge.m; sourceTree = "<group>"; };
 		343DB122202D77CC0072A854 /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
@@ -64,7 +61,6 @@
 		343DB125202D77CC0072A854 /* WebViewJavascriptBridge_JS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge_JS.m; sourceTree = "<group>"; };
 		343DB126202D77CC0072A854 /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
 		343DB127202D77CC0072A854 /* WKWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewJavascriptBridge.h; sourceTree = "<group>"; };
-		343DB128202D77CC0072A854 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		343DB129202D77CC0072A854 /* jssdk.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jssdk.js; sourceTree = "<group>"; };
 		343DB12A202D77CC0072A854 /* NewWebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewWebViewViewController.swift; sourceTree = "<group>"; };
 		343DB12B202D77CC0072A854 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
@@ -147,9 +143,7 @@
 		343DB11D202D77CC0072A854 /* WebViewJavascriptBridge */ = {
 			isa = PBXGroup;
 			children = (
-				343DB11E202D77CC0072A854 /* LICENSE */,
 				343DB11F202D77CC0072A854 /* WebViewJavascriptBridge */,
-				343DB128202D77CC0072A854 /* README.md */,
 			);
 			path = WebViewJavascriptBridge;
 			sourceTree = "<group>";
@@ -384,8 +378,6 @@
 				343DB13E202D77CC0072A854 /* error.html in Resources */,
 				34BB92D62024480E00956A18 /* Assets.xcassets in Resources */,
 				343DB139202D77CC0072A854 /* jssdk.js in Resources */,
-				343DB138202D77CC0072A854 /* README.md in Resources */,
-				343DB133202D77CC0072A854 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

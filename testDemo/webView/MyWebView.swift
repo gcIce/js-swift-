@@ -65,7 +65,6 @@ class MyWebView: UIView,WKNavigationDelegate,WKUIDelegate,UIScrollViewDelegate{
         self.addSubview(progressView)
         self.webView.uiDelegate = self
         self.webView.navigationDelegate = self
-        self.webView.scrollView.delegate = self
         self.webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         self.webView.addObserver(self,forKeyPath:"title" ,options:.new, context:nil)
         isFail = true
@@ -132,12 +131,6 @@ class MyWebView: UIView,WKNavigationDelegate,WKUIDelegate,UIScrollViewDelegate{
         webDelegate?.alterShow(message: message, type: .alter)
         completionHandler()
     }
-    
-//    func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
-//        webDelegate?.alterShow(message: message, type: .comfirm)
-//        //点击确认传true
-//        completionHandler(true)
-//    }
     
     deinit {
         print("webview释放")
